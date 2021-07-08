@@ -44,6 +44,6 @@ class GamesController < ApplicationController
     @word_serialized = URI.open(url).read
     @word = JSON.parse(@word_serialized)
     @found = @word['found']
-    @length = @word['length']
+    @found ? @length = @word['length'] : @length = 0
   end
 end

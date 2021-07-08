@@ -6,5 +6,12 @@
       <p> <b> <%= @message1%></b> <%= @answer.upcase %> <%= @message2 %> </p>
   <% end %>
 
+  <% if @found && @letters != []  %>
+  <% @score = @answer.length * 10 %>
+  <% else %>
+  <% @score = 0 %>
+  <% end %>
+
+   <h5>Score: <%=  @score  %> </h5>
   <%= link_to 'Play again', new_path %>
 </div>
