@@ -1,2 +1,10 @@
-<h1>Testing score</h1>
-<p> <%= @answer %> </p>
+<div class="score">
+  <h1>Result</h1>
+  <% if @letters == [] %>
+      <p> <%= @message1%> <b> <%= @answer.upcase %> </b>  <%= @message2 %> <%= @rand %> </p>
+  <% else %>
+      <p> <b> <%= @message1%></b> <%= @answer.upcase %> <%= @message2 %> </p>
+  <% end %>
+
+  <%= link_to 'Play again', new_path %>
+</div>
